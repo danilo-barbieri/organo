@@ -28,36 +28,36 @@ const Formulario = (props) => {
         <section className="formulario">
             <form onSubmit={aoSalvar}>
                 <h2>Preencha os dados para criar o card do colaborador</h2>
-                <Input 
-                obrigatorio={true} 
-                label="Nome" 
-                placeholder="Digite seu nome"
-                valor={nome}
-                aoAlterado={valor => setNome(valor)}
+                <CampoTexto
+                    obrigatorio={true}
+                    label="Nome"
+                    placeholder="Digite seu nome"
+                    valor={nome}
+                    aoAlterado={valor => setNome(valor)}
                 />
-                <Input 
-                obrigatorio={true} 
-                label="Cargo" 
-                placeholder="Digite seu cargo"
-                valor={cargo}
-                aoAlterado={valor => setCargo(valor)}
+                <CampoTexto
+                    obrigatorio={true}
+                    label="Cargo"
+                    placeholder="Digite seu cargo"
+                    valor={cargo}
+                    aoAlterado={valor => setCargo(valor)}
                 />
-                <Input 
-                label="Imagem" 
-                placeholder="Digite o endereço da imagem" 
-                valor={imagem}
-                aoAlterado={valor => setImagem(valor)}
+                <CampoTexto
+                    label="Imagem"
+                    placeholder="Digite o endereço da imagem"
+                    valor={imagem}
+                    aoAlterado={valor => setImagem(valor)}
                 />
-                <DropDown 
-                obrigatorio={true} 
-                label="Time" 
-                itens={props.times} 
-                valor={time}
-                aoAlterado={valor => setTime(valor)}
+                <ListaSuspensa
+                    obrigatorio={true}
+                    label="Time"
+                    itens={props.times}
+                    valor={time}
+                    aoAlterado={valor => setTime(valor)}
                 />
-                <Button>
-                    Criar Cad
-                </Button>
+                <Botao>
+                    Criar Card
+                </Botao>
             </form>
         </section>
     )
