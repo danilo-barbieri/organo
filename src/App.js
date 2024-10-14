@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import Banner from './componentes/Banner';
-import Formulario from './componentes/Formulario';
-import Time from './componentes/Time';
+import Banner from './components/Banner';
+import Formulario from './components/Formulário';
+import Time from './components/Time';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -46,7 +47,6 @@ function App() {
   const [colaboradores, setColaboradores] = useState([])
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
-    console.log(colaborador)
     setColaboradores([...colaboradores, colaborador])
   }
 
@@ -62,6 +62,7 @@ function App() {
         corSecundaria={time.corSecundaria} 
         colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
       />)}   
+      <Footer /> 
 
     </div>
   );
