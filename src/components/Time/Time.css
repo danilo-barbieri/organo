@@ -1,11 +1,11 @@
 .time {
-  text-align: center;
-  padding: 32px;
+    text-align: center;
+    padding: 32px;
 }
 
-.time h3{
+.time h3 {
     font-size: 32px;
-    border-bottom: 4px solid ;
+    border-bottom: 4px solid;
     display: inline-block;
     padding-bottom: 8px;
 }

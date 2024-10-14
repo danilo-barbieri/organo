@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import Banner from './components/Banner';
-import Formulario from './components/Formulário';
-import Time from './components/Time';
-import Footer from './Footer';
+import Banner from './componentes/Banner';
+import Formulario from './componentes/Formulario';
+import Time from './componentes/Time';
 
 function App() {
 
@@ -35,7 +34,7 @@ function App() {
     {
       nome: 'Mobile',
       corPrimaria: '#FFBA05',
-      corSecundaria: '#FFF5D0',
+      corSecundaria: '#FFF5D9'
     },
     {
       nome: 'Inovação e Gestão',
@@ -44,7 +43,7 @@ function App() {
     }
   ]
 
-  const [colaboradores, setColaboradores] = useState([]);
+  const [colaboradores, setColaboradores] = useState([])
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
     console.log(colaborador)
@@ -54,18 +53,17 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)} />
-      
-      {times.map(time => <Time
-        key={time.nome}
-        nome={time.nome}
-        corPrimaria={time.corPrimaria}
-        corSecundaria={time.corSecundaria}
-        colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
-      />)}
+      <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
 
-      <Footer />
-   </div>  
+      {times.map(time => <Time 
+        key={time.nome} 
+        nome={time.nome} 
+        corPrimaria={time.corPrimaria} 
+        corSecundaria={time.corSecundaria} 
+        colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
+      />)}   
+
+    </div>
   );
 }
 
